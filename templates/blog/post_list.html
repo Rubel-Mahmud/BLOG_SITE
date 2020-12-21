@@ -6,14 +6,6 @@
             <div class="date">
                 {% if post.published_date %}
                     {{ post.published_date }}
-                {% else %}
-                    {% if user.is_authenticated %}
-                        <h4><a href="{% url 'post_publish' pk=post.pk %}"><button>Publish</button></a></h4>
-                    {% endif %}
-                {% endif %}
-                {% if user.is_authenticated %}
-                    <h4><a href="{% url 'post_delete' pk=post.pk %}"><button><span class="glyphicon glyphicon-remove
-"></span></button></a></h4>
                 {% endif %}
             </div>
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
